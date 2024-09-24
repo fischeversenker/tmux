@@ -238,6 +238,10 @@ main()
       IFS=' ' read -r -a colors <<<$(get_tmux_option "@dracula-terraform-colors" "light_purple dark_gray")
       script="#($current_dir/terraform.sh $terraform_label)"
 
+    elif [ $plugin = "coffeecup" ]; then
+      IFS=' ' read -r -a colors <<<$(get_tmux_option "@dracula-coffeecup-colors" "dark_purple white")
+      script="#($current_dir/coffeecup.sh)"
+
     elif [ $plugin = "continuum" ]; then
       IFS=' ' read -r -a colors <<<$(get_tmux_option "@dracula-continuum-colors" "cyan dark_gray")
       script="#($current_dir/continuum.sh)"
